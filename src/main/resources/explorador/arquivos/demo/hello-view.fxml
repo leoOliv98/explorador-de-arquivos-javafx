@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="480.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="explorador.arquivos.demo.controller.HelloController">
+   <children>
+      <!-- Título principal -->
+      <Label layoutX="20.0" layoutY="15.0" text="Explorador de Diretórios">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+
+      <!-- Campo que mostra o caminho atual (ex: /Raiz/Documentos) -->
+      <TextField fx:id="txtCaminhoAtual" editable="false" layoutX="20.0" layoutY="55.0" prefHeight="26.0" prefWidth="640.0" promptText="Caminho atual..." />
+
+      <!-- Área central: Janela de Arquivos e Pastas -->
+      <ScrollPane fx:id="scrollConteudo" fitToWidth="true" layoutX="20.0" layoutY="95.0" prefHeight="360.0" prefWidth="490.0">
+         <content>
+            <!-- Contêiner dinâmico onde as pastas/arquivos serão desenhados em lista -->
+            <VBox fx:id="conteudoPastas" spacing="5.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+
+      <!-- Painel Lateral Direito: Botões de Ação -->
+      <VBox layoutX="525.0" layoutY="95.0" prefWidth="135.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnNovaPasta" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNovaPastaClick" text="📁 Nova Pasta" />
+            <Button fx:id="btnNovoArquivo" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNovoArquivoClick" text="📄 Novo Arquivo" />
+            <Button fx:id="btnCopiar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCopiarClick" text="📋 Copiar" />
+            <Button fx:id="btnRecortar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onRecortarClick" text="✂️ Recortar" />
+            <Button fx:id="btnColar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onColarClick" text="📌 Colar" />
+            <Button fx:id="btnRenomear" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onRenomearClick" text="✏️ Renomear" />
+            <Button fx:id="btnDeletar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDeletarClick" text="❌ Deletar" />
+            <Button fx:id="btnArvore" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onVerArvoreClick" text="🌳 Ver Árvore" />
+            <Button fx:id="btnPropriedades" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onVerPropriedadesClick" text="⚙️ Propriedades"/>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
